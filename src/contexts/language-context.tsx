@@ -19,7 +19,7 @@ const translations = {
     "hero.title":
       "José Rocha: Desenvolvedor Web Transformando Ideias em Experiências Digitais",
     "hero.subtitle":
-      "Especialista em criar aplicações web modernas e responsivas com React e Node.js",
+      "Criando aplicações web modernas, responsivas e escaláveis.",
     "hero.cta": "Veja meus projetos",
 
     // About Section
@@ -35,10 +35,13 @@ const translations = {
 
     // Contact Section
     "contact.title": "Entre em Contato",
-    "contact.name": "Nome",
-    "contact.email": "Email",
-    "contact.message": "Mensagem",
-    "contact.send": "Enviar Mensagem",
+    "contact.form.name": "Nome",
+    "contact.form.email": "Email",
+    "contact.form.message": "Mensagem",
+    "contact.form.send": "Enviar Mensagem",
+    "contact.media.title": "Conecte-se comigo",
+    "contact.media.description":
+      "Vamos trabalhar juntos para criar algo incrível!",
 
     // Footer
     "footer.rights": `© ${new Date().getFullYear()}  José Rocha. Todos os direitos reservados.`,
@@ -53,7 +56,7 @@ const translations = {
     "hero.title":
       "José Rocha: Web Developer Transforming Ideas into Digital Experiences",
     "hero.subtitle":
-      "Specialist in creating modern and responsive web applications with React and Node.js",
+      "Creating modern, responsive and scalable web applications.",
     "hero.cta": "View my projects",
 
     // About Section
@@ -69,10 +72,13 @@ const translations = {
 
     // Contact Section
     "contact.title": "Get in Touch",
-    "contact.name": "Name",
-    "contact.email": "Email",
-    "contact.message": "Message",
-    "contact.send": "Send Message",
+    "contact.form.name": "Name",
+    "contact.form.email": "Email",
+    "contact.form.message": "Message",
+    "contact.form.send": "Send Message",
+    "contact.media.title": "Connect with me",
+    "contact.media.description":
+      "Let's work together to create something amazing!",
 
     // Footer
     "footer.rights": `© ${new Date().getFullYear()} José Rocha. All rights reserved.`,
@@ -87,7 +93,7 @@ const translations = {
     "hero.title":
       "José Rocha: Desarrollador Web Transformando Ideas en Experiencias Digitales",
     "hero.subtitle":
-      "Especialista en crear aplicaciones web modernas y responsivas con React y Node.js",
+      "Creación de aplicaciones web modernas, responsivas y escalables.",
     "hero.cta": "Ver mis proyectos",
 
     // About Section
@@ -103,10 +109,13 @@ const translations = {
 
     // Contact Section
     "contact.title": "Ponte en Contacto",
-    "contact.name": "Nombre",
-    "contact.email": "Email",
-    "contact.message": "Mensaje",
-    "contact.send": "Enviar Mensaje",
+    "contact.form.name": "Nombre",
+    "contact.form.email": "Email",
+    "contact.form.message": "Mensaje",
+    "contact.form.send": "Enviar Mensaje",
+    "contact.media.title": "Conéctate conmigo",
+    "contact.media.description":
+      "¡Trabajemos juntos para crear algo increíble!",
 
     // Footer
     "footer.rights": `© ${new Date().getFullYear()}  José Rocha. Todos los derechos reservados.`,

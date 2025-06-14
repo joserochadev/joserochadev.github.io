@@ -56,7 +56,7 @@ export function ContactSection() {
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <Label htmlFor="name">{t("contact.name")}</Label>
+                  <Label htmlFor="name">{t("contact.form.name")}</Label>
                   <Input
                     id="name"
                     name="name"
@@ -68,7 +68,7 @@ export function ContactSection() {
                 </div>
 
                 <div>
-                  <Label htmlFor="email">{t("contact.email")}</Label>
+                  <Label htmlFor="email">{t("contact.form.email")}</Label>
                   <Input
                     id="email"
                     name="email"
@@ -81,7 +81,7 @@ export function ContactSection() {
                 </div>
 
                 <div>
-                  <Label htmlFor="message">{t("contact.message")}</Label>
+                  <Label htmlFor="message">{t("contact.form.message")}</Label>
                   <Textarea
                     id="message"
                     name="message"
@@ -97,7 +97,7 @@ export function ContactSection() {
                   type="submit"
                   className="w-full bg-[#6900FF] hover:bg-[#5500CC] text-white"
                 >
-                  {t("contact.send")}
+                  {t("contact.form.send")}
                 </Button>
               </form>
             </CardContent>
@@ -106,7 +106,7 @@ export function ContactSection() {
           <div className="flex flex-col justify-center space-y-8">
             <div className="text-center">
               <h3 className="text-xl font-semibold font-heading mb-4">
-                Conecte-se comigo
+                {t("contact.media.title")}
               </h3>
               <div className="flex justify-center space-x-6">
                 <a
@@ -135,7 +135,7 @@ export function ContactSection() {
             </div>
 
             <div className="text-center text-muted-foreground">
-              <p>Vamos trabalhar juntos para criar algo incrível!</p>
+              <p>{t("contact.media.description")}</p>
             </div>
           </div>
         </div>
