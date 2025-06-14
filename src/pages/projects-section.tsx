@@ -10,51 +10,63 @@ import { Badge } from "../components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import { useLanguage } from "../contexts/language-context";
 
-export function ProjectsSection() {
-  const { t } = useLanguage();
+const projects = [
+  {
+    title: "E-commerce Platform",
+    description: {
+      pt: "Plataforma completa de e-commerce com painel administrativo, carrinho de compras e integração de pagamentos.",
+      en: "A complete e-commerce platform with an admin panel, shopping cart, and payment integration.",
+      es: "Plataforma completa de comercio electrónico con panel de administración, carrito de compras e integración de pagos.",
+    },
+    image:
+      "https://kzmjzt9jymy069y1yukz.lite.vusercontent.net/placeholder.svg?height=300&width=400",
+    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    repoUrl: "#",
+    demoUrl: "#",
+  },
+  {
+    title: "Task Management App",
+    description: {
+      pt: "Aplicativo de gerenciamento de tarefas com funcionalidades de colaboração em tempo real.",
+      en: "A task management application with real-time collaboration features.",
+      es: "Aplicación de gestión de tareas con funcionalidades de colaboración en tiempo real.",
+    },
+    image:
+      "https://kzmjzt9jymy069y1yukz.lite.vusercontent.net/placeholder.svg?height=300&width=400",
+    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
+    repoUrl: "#",
+    demoUrl: "#",
+  },
+  {
+    title: "Weather Dashboard",
+    description: {
+      pt: "Dashboard meteorológico com previsões detalhadas e visualizações interativas.",
+      en: "A weather dashboard with detailed forecasts and interactive visualizations.",
+      es: "Panel meteorológico con previsiones detalladas y visualizaciones interactivas.",
+    },
+    image:
+      "https://kzmjzt9jymy069y1yukz.lite.vusercontent.net/placeholder.svg?height=300&width=400",
+    technologies: ["React", "Chart.js", "OpenWeather API", "Tailwind"],
+    repoUrl: "#",
+    demoUrl: "#",
+  },
+  {
+    title: "Social Media Analytics",
+    description: {
+      pt: "Ferramenta de análise de redes sociais com métricas avançadas e relatórios personalizados.",
+      en: "A social media analytics tool with advanced metrics and custom reports.",
+      es: "Herramienta de análisis de redes sociales con métricas avanzadas e informes personalizados.",
+    },
+    image:
+      "https://kzmjzt9jymy069y1yukz.lite.vusercontent.net/placeholder.svg?height=300&width=400",
+    technologies: ["Vue.js", "Python", "FastAPI", "Redis"],
+    repoUrl: "#",
+    demoUrl: "#",
+  },
+];
 
-  const projects = [
-    {
-      title: "E-commerce Platform",
-      description:
-        "Plataforma completa de e-commerce com painel administrativo, carrinho de compras e integração de pagamentos.",
-      image:
-        "https://kzmjzt9jymy069y1yukz.lite.vusercontent.net/placeholder.svg?height=300&width=400",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      repoUrl: "#",
-      demoUrl: "#",
-    },
-    {
-      title: "Task Management App",
-      description:
-        "Aplicativo de gerenciamento de tarefas com funcionalidades de colaboração em tempo real.",
-      image:
-        "https://kzmjzt9jymy069y1yukz.lite.vusercontent.net/placeholder.svg?height=300&width=4000&width=400",
-      technologies: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
-      repoUrl: "#",
-      demoUrl: "#",
-    },
-    {
-      title: "Weather Dashboard",
-      description:
-        "Dashboard meteorológico com previsões detalhadas e visualizações interativas.",
-      image:
-        "https://kzmjzt9jymy069y1yukz.lite.vusercontent.net/placeholder.svg?height=300&width=400",
-      technologies: ["React", "Chart.js", "OpenWeather API", "Tailwind"],
-      repoUrl: "#",
-      demoUrl: "#",
-    },
-    {
-      title: "Social Media Analytics",
-      description:
-        "Ferramenta de análise de redes sociais com métricas avançadas e relatórios personalizados.",
-      image:
-        "https://kzmjzt9jymy069y1yukz.lite.vusercontent.net/placeholder.svg?height=300&width=400",
-      technologies: ["Vue.js", "Python", "FastAPI", "Redis"],
-      repoUrl: "#",
-      demoUrl: "#",
-    },
-  ];
+export function ProjectsSection() {
+  const { t, language } = useLanguage();
 
   return (
     <section id="projects" className="py-20 px-4 bg-muted/30">
@@ -110,7 +122,7 @@ export function ProjectsSection() {
                   {project.title}
                 </CardTitle>
                 <CardDescription className="text-sm">
-                  {project.description}
+                  {project.description[language]}
                 </CardDescription>
               </CardHeader>
 
