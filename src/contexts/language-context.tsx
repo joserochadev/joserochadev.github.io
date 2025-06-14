@@ -43,6 +43,11 @@ const translations = {
     "contact.media.description":
       "Vamos trabalhar juntos para criar algo incrível!",
 
+    // Contact Form Errors
+    "contact.error.nameRequired": "O nome é obrigatório",
+    "contact.error.emailInvalid": "Endereço de e-mail inválido",
+    "contact.error.messageRequired": "A mensagem é obrigatória",
+
     // Footer
     "footer.rights": `© ${new Date().getFullYear()}  José Rocha. Todos os direitos reservados.`,
   },
@@ -80,6 +85,11 @@ const translations = {
     "contact.media.description":
       "Let's work together to create something amazing!",
 
+    // Contact Form Errors
+    "contact.error.nameRequired": "Name is required",
+    "contact.error.emailInvalid": "Invalid email address",
+    "contact.error.messageRequired": "Message is required",
+
     // Footer
     "footer.rights": `© ${new Date().getFullYear()} José Rocha. All rights reserved.`,
   },
@@ -116,6 +126,11 @@ const translations = {
     "contact.media.title": "Conéctate conmigo",
     "contact.media.description":
       "¡Trabajemos juntos para crear algo increíble!",
+
+    // Contact Form Errors
+    "contact.error.nameRequired": "El nombre es obligatorio",
+    "contact.error.emailInvalid": "Dirección de correo electrónico no válida",
+    "contact.error.messageRequired": "El mensaje es obligatorio",
 
     // Footer
     "footer.rights": `© ${new Date().getFullYear()}  José Rocha. Todos los derechos reservados.`,

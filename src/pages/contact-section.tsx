@@ -1,43 +1,47 @@
-import type React from "react";
-
-import { useState } from "react";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "../components/ui/card";
-import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
-import { Textarea } from "../components/ui/textarea";
-import { Label } from "../components/ui/label";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, SendHorizonal } from "lucide-react";
 import { useLanguage } from "../contexts/language-context";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "../components/ui/form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Textarea } from "../components/ui/textarea";
+import { Button } from "../components/ui/button";
 
 export function ContactSection() {
   const { t } = useLanguage();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+
+  const contactFormSchema = z.object({
+    name: z.string().min(1, t("contact.error.nameRequired")),
+    email: z.string().email(t("contact.error.emailInvalid")),
+    message: z.string().min(1, t("contact.error.messageRequired")),
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
-  };
+  const form = useForm<z.infer<typeof contactFormSchema>>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  function onSubmit(data: z.infer<typeof contactFormSchema>) {
+    console.log("Form submitted:", data);
+  }
 
   return (
     <section id="contact" className="py-20 px-4">
@@ -54,52 +58,74 @@ export function ContactSection() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Label htmlFor="name">{t("contact.form.name")}</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="mt-1"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="email">{t("contact.form.email")}</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="mt-1"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="message">{t("contact.form.message")}</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="mt-1"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  className="w-full bg-[#6900FF] hover:bg-[#5500CC] text-white"
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-6"
                 >
-                  {t("contact.form.send")}
-                </Button>
-              </form>
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="gap-1">
+                          {t("contact.form.name")}
+                          <span className="text-brand-purple">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input placeholder="Ex: John Doe" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="gap-1">
+                          {t("contact.form.email")}
+                          <span className="text-brand-purple">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="Ex: johndoe@example.com"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="gap-1">
+                          {t("contact.form.message")}
+                          <span className="text-brand-purple">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Ex: Let's work together."
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <Button
+                    type="submit"
+                    className="w-full bg-[#6900FF] hover:bg-[#5500CC] text-white"
+                  >
+                    {t("contact.form.send")}
+                    <SendHorizonal />
+                  </Button>
+                </form>
+              </Form>
             </CardContent>
           </Card>
 
