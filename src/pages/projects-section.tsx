@@ -59,7 +59,7 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="py-20 px-4 bg-muted/30">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold font-heading text-center mb-12">
           {t("projects.title")}
         </h2>
 
@@ -106,7 +106,9 @@ export function ProjectsSection() {
               </div>
 
               <CardHeader>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
+                <CardTitle className="text-xl font-heading">
+                  {project.title}
+                </CardTitle>
                 <CardDescription className="text-sm">
                   {project.description}
                 </CardDescription>
