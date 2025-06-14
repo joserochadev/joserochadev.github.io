@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { Moon, Sun, Globe } from "lucide-react";
 import { Button } from "../components/ui/button";
 import {
@@ -10,12 +10,12 @@ import {
 import { useLanguage, type Language } from "../contexts/language-context";
 
 export function Header() {
-  const [mounted, setMounted] = useState(false);
+  // const [mounted, setMounted] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -30,9 +30,9 @@ export function Header() {
     { code: "es", label: "Español", flag: "🇪🇸" },
   ];
 
-  if (!mounted) {
-    return null;
-  }
+  // if (!mounted) {
+  //   return null;
+  // }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
