@@ -20,8 +20,10 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "../components/ui/textarea";
 import { Button } from "../components/ui/button";
+import emailjs from "@emailjs/browser";
 
 import { media } from "./utils/media";
+import { env } from "../env";
 
 export function ContactSection() {
   const { t } = useLanguage();
@@ -42,7 +44,31 @@ export function ContactSection() {
   });
 
   function onSubmit(data: z.infer<typeof contactFormSchema>) {
-    console.log("Form submitted:", data);
+    const templateParams = {
+      name: data.name,
+      email: data.email,
+      message: data.message,
+    };
+
+    const serviceID = env.VITE_SERVICE_ID;
+    const templateID = env.VITE_TEMPLATE_ID;
+    const publicKey = env.VITE_PUBLIC_KEY;
+
+    emailjs
+      .send(serviceID, templateID, templateParams, publicKey)
+      .then((response) => {
+        console.log(
+          "E-mail enviado com sucesso!",
+          response.status,
+          response.text
+        );
+        alert("Mensagem enviada com sucesso!");
+        form.reset();
+      })
+      .catch((err) => {
+        console.error("ERRO AO ENVIAR E-MAIL:", err);
+        alert("Ocorreu um erro ao enviar a mensagem. Tente novamente.");
+      });
   }
 
   return (
