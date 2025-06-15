@@ -32,6 +32,8 @@ const translations = {
     "projects.title": "Meus Projetos",
     "projects.viewRepo": "Ver Repositório",
     "projects.viewDemo": "Ver Deploy",
+    "projects.viewMore": "Ver mais projetos",
+    "projects.viewLess": "Ver menos",
 
     // Contact Section
     "contact.title": "Entre em Contato",
@@ -74,6 +76,8 @@ const translations = {
     "projects.title": "My Projects",
     "projects.viewRepo": "View Repository",
     "projects.viewDemo": "View Demo",
+    "projects.viewMore": "View more projects",
+    "projects.viewLess": "View less",
 
     // Contact Section
     "contact.title": "Get in Touch",
@@ -116,6 +120,8 @@ const translations = {
     "projects.title": "Mis Proyectos",
     "projects.viewRepo": "Ver Repositorio",
     "projects.viewDemo": "Ver Demo",
+    "projects.viewMore": "Ver más proyectos",
+    "projects.viewLess": "Ver menos",
 
     // Contact Section
     "contact.title": "Ponte en Contacto",

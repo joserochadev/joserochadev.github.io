@@ -10,9 +10,21 @@ import { Badge } from "../components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import { useLanguage } from "../contexts/language-context";
 import { projects } from "./utils/projects";
+import { useState } from "react";
+
+const INITIAL_VISIBLE_COUNT = 4;
 
 export function ProjectsSection() {
   const { t, language } = useLanguage();
+  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
+
+  function toggleVisibleProjects() {
+    setVisibleCount((prevCount) =>
+      prevCount === INITIAL_VISIBLE_COUNT
+        ? projects.length
+        : INITIAL_VISIBLE_COUNT
+    );
+  }
 
   return (
     <section id="projects" className="py-20 px-4 bg-muted/30">
@@ -22,10 +34,11 @@ export function ProjectsSection() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {projects.slice(0, visibleCount).map((project, index) => (
             <Card
               key={index}
               className="group p-0 pb-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 bg-background/60 backdrop-blur"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
@@ -88,6 +101,20 @@ export function ProjectsSection() {
             </Card>
           ))}
         </div>
+
+        {projects.length > INITIAL_VISIBLE_COUNT && (
+          <div className="text-center mt-12">
+            <Button
+              size="lg"
+              onClick={toggleVisibleProjects}
+              className="bg-[#6900FF] hover:bg-[#5500CC]"
+            >
+              {visibleCount === projects.length
+                ? t("projects.viewLess")
+                : t("projects.viewMore")}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
