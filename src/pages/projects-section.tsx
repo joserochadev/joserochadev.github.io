@@ -9,61 +9,7 @@ import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import { useLanguage } from "../contexts/language-context";
-
-const projects = [
-  {
-    title: "E-commerce Platform",
-    description: {
-      pt: "Plataforma completa de e-commerce com painel administrativo, carrinho de compras e integração de pagamentos.",
-      en: "A complete e-commerce platform with an admin panel, shopping cart, and payment integration.",
-      es: "Plataforma completa de comercio electrónico con panel de administración, carrito de compras e integración de pagos.",
-    },
-    image:
-      "https://kzmjzt9jymy069y1yukz.lite.vusercontent.net/placeholder.svg?height=300&width=400",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    repoUrl: "#",
-    demoUrl: "#",
-  },
-  {
-    title: "Task Management App",
-    description: {
-      pt: "Aplicativo de gerenciamento de tarefas com funcionalidades de colaboração em tempo real.",
-      en: "A task management application with real-time collaboration features.",
-      es: "Aplicación de gestión de tareas con funcionalidades de colaboración en tiempo real.",
-    },
-    image:
-      "https://kzmjzt9jymy069y1yukz.lite.vusercontent.net/placeholder.svg?height=300&width=400",
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
-    repoUrl: "#",
-    demoUrl: "#",
-  },
-  {
-    title: "Weather Dashboard",
-    description: {
-      pt: "Dashboard meteorológico com previsões detalhadas e visualizações interativas.",
-      en: "A weather dashboard with detailed forecasts and interactive visualizations.",
-      es: "Panel meteorológico con previsiones detalladas y visualizaciones interactivas.",
-    },
-    image:
-      "https://kzmjzt9jymy069y1yukz.lite.vusercontent.net/placeholder.svg?height=300&width=400",
-    technologies: ["React", "Chart.js", "OpenWeather API", "Tailwind"],
-    repoUrl: "#",
-    demoUrl: "#",
-  },
-  {
-    title: "Social Media Analytics",
-    description: {
-      pt: "Ferramenta de análise de redes sociais com métricas avançadas e relatórios personalizados.",
-      en: "A social media analytics tool with advanced metrics and custom reports.",
-      es: "Herramienta de análisis de redes sociales con métricas avanzadas e informes personalizados.",
-    },
-    image:
-      "https://kzmjzt9jymy069y1yukz.lite.vusercontent.net/placeholder.svg?height=300&width=400",
-    technologies: ["Vue.js", "Python", "FastAPI", "Redis"],
-    repoUrl: "#",
-    demoUrl: "#",
-  },
-];
+import { projects } from "./utils/projects";
 
 export function ProjectsSection() {
   const { t, language } = useLanguage();
@@ -79,7 +25,7 @@ export function ProjectsSection() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 bg-background/60 backdrop-blur"
+              className="group p-0 pb-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 bg-background/60 backdrop-blur"
             >
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
