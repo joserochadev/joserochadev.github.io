@@ -9,15 +9,16 @@ import {
 } from "../components/ui/dropdown-menu";
 import { useLanguage, type Language } from "../contexts/language-context";
 import { useTheme } from "../contexts/theme-context";
+import { useEffect, useState } from "react";
 
 export function Header() {
-  // const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const { theme, setTheme } = useTheme();
 
-  // useEffect(() => {
-  //   setMounted(true);
-  // }, []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -32,18 +33,20 @@ export function Header() {
     { code: "es", label: "Español", flag: "🇪🇸" },
   ];
 
-  // if (!mounted) {
-  //   return null;
-  // }
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <div className="flex items-center space-x-2">
-          <h1 className="text-xl font-bold text-[#6900FF]">JoséRochaDev</h1>
+        <div className="flex items-center space-x-2 select-none">
+          <button onClick={() => scrollToSection("hero")}>
+            <h1 className="text-xl font-bold text-[#6900FF]">JoséRochaDev</h1>
+          </button>
         </div>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="items-center gap-8 md:flex">
           <nav className="hidden md:flex items-center space-x-6">
             <button
               onClick={() => scrollToSection("about")}
