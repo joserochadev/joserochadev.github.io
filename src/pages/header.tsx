@@ -10,6 +10,7 @@ import {
 import { useLanguage, type Language } from "../contexts/language-context";
 import { useTheme } from "../contexts/theme-context";
 import { useEffect, useState } from "react";
+import { LoadingScreen } from "../components/loading-screen";
 
 export function Header() {
   const [mounted, setMounted] = useState(false);
@@ -17,7 +18,11 @@ export function Header() {
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 500); // 500ms
+
+    return () => clearTimeout(timer);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -34,7 +39,7 @@ export function Header() {
   ];
 
   if (!mounted) {
-    return null;
+    return <LoadingScreen />;
   }
 
   return (
