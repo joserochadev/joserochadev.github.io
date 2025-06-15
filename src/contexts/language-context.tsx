@@ -25,7 +25,7 @@ const translations = {
     // About Section
     "about.title": "Sobre Mim",
     "about.description":
-      "Sou um desenvolvedor web apaixonado por tecnologia, com experiência em criar soluções digitais inovadoras. Medalha de ouro na Olimpíada de Tecnologia, sempre busco excelência em cada projeto que desenvolvo.",
+      "Desenvolvedor web apaixonado por tecnologia e fascinado por desafios de baixo nível, como o desenvolvimento de emuladores. Essa curiosidade por otimização e performance se reflete na minha maneira de criar soluções digitais inovadoras e eficientes, buscando sempre a excelência em cada projeto que assumo.",
     "about.skills": "Principais Habilidades",
 
     // Projects Section
@@ -69,7 +69,7 @@ const translations = {
     // About Section
     "about.title": "About Me",
     "about.description":
-      "I am a web developer passionate about technology, with experience in creating innovative digital solutions. Gold medal winner at the Technology Olympics, I always strive for excellence in every project I develop.",
+      "I am a web developer passionate about technology and fascinated by low-level challenges, such as emulator development. This curiosity for optimization and performance is reflected in how I create innovative and efficient digital solutions, always striving for excellence in every project I undertake.",
     "about.skills": "Main Skills",
 
     // Projects Section
@@ -113,7 +113,7 @@ const translations = {
     // About Section
     "about.title": "Sobre Mí",
     "about.description":
-      "Soy un desarrollador web apasionado por la tecnología, con experiencia en crear soluciones digitales innovadoras. Medalla de oro en la Olimpiada de Tecnología, siempre busco la excelencia en cada proyecto que desarrollo.",
+      "Soy un desarrollador web apasionado por la tecnología y fascinado por los desafíos de bajo nivel, como el desarrollo de emuladores. Esta curiosidad por la optimización y el rendimiento se refleja en mi forma de crear soluciones digitales innovadoras y eficientes, buscando siempre la excelencia en cada proyecto que asumo.",
     "about.skills": "Principales Habilidades",
 
     // Projects Section

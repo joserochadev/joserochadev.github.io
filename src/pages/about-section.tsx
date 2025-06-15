@@ -15,6 +15,7 @@ export function AboutSection() {
     "PostgreSQL",
     "Git",
     "Docker",
+    "Rust",
   ];
 
   return (
@@ -38,7 +39,7 @@ export function AboutSection() {
           </div>
 
           <div>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-justify">
               {t("about.description")}
             </p>
 
