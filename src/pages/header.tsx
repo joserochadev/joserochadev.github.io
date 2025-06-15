@@ -43,57 +43,59 @@ export function Header() {
           <h1 className="text-xl font-bold text-[#6900FF]">JoséRochaDev</h1>
         </div>
 
-        <nav className="hidden md:flex items-center space-x-6">
-          <button
-            onClick={() => scrollToSection("about")}
-            className="text-sm font-medium hover:text-[#6900FF] transition-colors"
-          >
-            {t("nav.about")}
-          </button>
-          <button
-            onClick={() => scrollToSection("projects")}
-            className="text-sm font-medium hover:text-[#6900FF] transition-colors"
-          >
-            {t("nav.projects")}
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="text-sm font-medium hover:text-[#6900FF] transition-colors"
-          >
-            {t("nav.contact")}
-          </button>
-        </nav>
+        <div className="hidden items-center gap-8 md:flex">
+          <nav className="hidden md:flex items-center space-x-6">
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-sm font-medium hover:text-[#6900FF] transition-colors"
+            >
+              {t("nav.about")}
+            </button>
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="text-sm font-medium hover:text-[#6900FF] transition-colors"
+            >
+              {t("nav.projects")}
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-sm font-medium hover:text-[#6900FF] transition-colors"
+            >
+              {t("nav.contact")}
+            </button>
+          </nav>
 
-        <div className="flex items-center space-x-2">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm">
-                <Globe className="h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              {languageOptions.map((lang) => (
-                <DropdownMenuItem
-                  key={lang.code}
-                  onClick={() => setLanguage(lang.code as Language)}
-                  className={language === lang.code ? "bg-accent" : ""}
-                >
-                  <span className="mr-2">{lang.flag}</span>
-                  {lang.label}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <div className="flex items-center space-x-2">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm">
+                  <Globe className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {languageOptions.map((lang) => (
+                  <DropdownMenuItem
+                    key={lang.code}
+                    onClick={() => setLanguage(lang.code as Language)}
+                    className={language === lang.code ? "bg-accent" : ""}
+                  >
+                    <span className="mr-2">{lang.flag}</span>
+                    {lang.label}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
 
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-          >
-            <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            <span className="sr-only">Toggle theme</span>
-          </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            >
+              <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+          </div>
         </div>
       </div>
     </header>
