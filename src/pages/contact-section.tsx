@@ -21,6 +21,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "../components/ui/textarea";
 import { Button } from "../components/ui/button";
 
+import { media } from "./utils/media";
+
 export function ContactSection() {
   const { t } = useLanguage();
 
@@ -136,7 +138,7 @@ export function ContactSection() {
               </h3>
               <div className="flex justify-center space-x-6">
                 <a
-                  href="https://github.com"
+                  href={media.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-[#6900FF]/10 hover:bg-[#6900FF]/20 transition-colors"
@@ -144,7 +146,7 @@ export function ContactSection() {
                   <Github className="w-6 h-6 text-[#6900FF]" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href={media.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-[#6900FF]/10 hover:bg-[#6900FF]/20 transition-colors"
@@ -152,7 +154,7 @@ export function ContactSection() {
                   <Linkedin className="w-6 h-6 text-[#6900FF]" />
                 </a>
                 <a
-                  href="mailto:jose@example.com"
+                  href={`mailto:${media.email}`}
                   className="p-3 rounded-full bg-[#6900FF]/10 hover:bg-[#6900FF]/20 transition-colors"
                 >
                   <Mail className="w-6 h-6 text-[#6900FF]" />
