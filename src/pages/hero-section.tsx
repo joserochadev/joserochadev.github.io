@@ -60,7 +60,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-background to-background/80">
+    <section className="min-h-screen flex items-center justify-center px-4 bg-background">
       <div className="absolute inset-0 z-0">
         {techIcons.map(({ Icon, style, duration }, index) => (
           <span
