@@ -58,6 +58,19 @@ export const projects: IProject[] = [
     demoUrl: "https://github.com/joserochadev/EmuChan",
   },
   {
+    title: "Chip8 Emulator",
+    description: {
+      pt: "Um emulador de Chip8 contruido com html, css e javascript.",
+      en: "A Chip8 emulator built with html, css and javascript.",
+      es: "Un emulador de Chip8 creado con html, css y javascript.",
+    },
+    image:
+      "https://github.com/joserochadev/chip8Emulator/raw/master/public/chip8-emulator.png?raw=true",
+    technologies: ["html", "css", "JavaScript"],
+    repoUrl: "https://github.com/joserochadev/chip8Emulator",
+    demoUrl: "https://joserochadev.github.io/chip8Emulator/",
+  },
+  {
     title: "Books API",
     description: {
       pt: "Uma API RESTful para gerenciar livros com funcionalidades de CRUD.",
@@ -112,18 +125,7 @@ export const projects: IProject[] = [
     repoUrl: "https://github.com/joserochadev/dt-money",
     demoUrl: "https://dt-money-three-omega.vercel.app/",
   },
-  {
-    title: "Chip8 Emulator",
-    description: {
-      pt: "Um emulador de Chip8 contruido com html, css e javascript.",
-      en: "A Chip8 emulator built with html, css and javascript.",
-      es: "Un emulador de Chip8 creado con html, css y javascript.",
-    },
-    image: "projects/images/chip8.png",
-    technologies: ["html", "css", "JavaScript"],
-    repoUrl: "https://github.com/joserochadev/chip8Emulator",
-    demoUrl: "https://github.com/joserochadev/chip8Emulator",
-  },
+
   {
     title: "Coffee Delivery",
     description: {
