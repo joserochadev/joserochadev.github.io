@@ -13,6 +13,27 @@ interface IProject {
 
 export const projects: IProject[] = [
   {
+    title: "Let me Ask",
+    description: {
+      pt: "É uma plataforma para auxiliar YouYubers e streamers. Ela utiliza IA para responder perguntas de quem está assistindo.",
+      en: "It's a platform to assist YouTubers and streamers. It uses AI to answer questions from viewers.",
+      es: "Es una plataforma para ayudar a YouTubers y streamers. Utiliza IA para responder preguntas de los espectadores.",
+    },
+    image:
+      "https://github.com/joserochadev/let-me-ask/blob/master/public/let-me-ask.png?raw=true",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Fastify",
+      "Shadcn-ui",
+      "docker",
+      "Gemini AI",
+    ],
+    repoUrl: "https://github.com/joserochadev/let-me-ask",
+    demoUrl: "https://let-me-ask-phi.vercel.app/",
+  },
+  {
     title: "Link-up",
     description: {
       pt: "Uma aplicação de videoconferência em tempo real para criar e participar de salas de reunião virtuais de forma simples e rápida.",
