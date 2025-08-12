@@ -13,6 +13,30 @@ interface IProject {
 
 export const projects: IProject[] = [
   {
+    title: "Fit-finder",
+    description: {
+      pt: "É uma API de uma plataforma de fitness que permite os usuários encontrar academias próximas, fazer check-in e acompanhar seu histórico de atividades.",
+      en: "It is an API for a fitness platform that allows users to find nearby gyms, check-in, and track their activity history.",
+      es: "Es una API para una plataforma de fitness que permite a los usuarios encontrar gimnasios cercanos, hacer check-in y rastrear su historial de actividades.",
+    },
+    image: "projects/images/fit-finder.png",
+    technologies: [
+      "Node.js",
+      "Fastify",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "Zod",
+      "docker",
+      "vitest",
+      "supertest",
+      "JWT",
+      "Swagger",
+    ],
+    repoUrl: "https://github.com/joserochadev/fit-finder",
+    demoUrl: "https://github.com/joserochadev/fit-finder",
+  },
+  {
     title: "Let me Ask",
     description: {
       pt: "É uma plataforma para auxiliar YouYubers e streamers. Ela utiliza IA para responder perguntas de quem está assistindo.",
